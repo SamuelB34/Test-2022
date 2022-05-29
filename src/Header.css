@@ -1,0 +1,18 @@
+.Container{
+    background-color: #3C3C3C;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px 10px 50px;
+    align-items: center;
+    color: rgb(223, 223, 223);
+}
+
+.Container a {
+    color: rgb(223, 223, 223);
+    text-decoration: none;
+}
+
+.Container a p{
+    font-size: 18px;
+}
+

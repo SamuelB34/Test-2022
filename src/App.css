@@ -1,0 +1,70 @@
+.App {
+  text-align: center;
+}
+.Title{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20%;
+  margin-top: 5rem;
+}
+
+.App-header {
+  background-color: #666565;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white; 
+  /* align-items: center; */
+}
+
+.App-header h2{
+  font-size: 30px;
+  margin-top: 50px;
+}
+.ContainerRestaurants{
+  display: grid;
+  grid-template-columns: repeat(2, 20% 70%);
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-bottom: 3rem;
+}
+.InfoCont{
+  background-color: #A5A5A5;
+}
+.ContCarousell{
+  margin-top: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.ListCont a{
+  text-decoration: none;
+  color: white; 
+}
+.pic{
+  width: 40%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.contImage{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 40px;
+  margin-top: 20px;
+  
+}
+.txtCont{
+  margin-right: 1rem;
+  text-align: justify;
+  font-size: 20px;
+  margin-top: 4rem;
+}
+.loremTxt{
+  text-align: justify;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.title{
+  margin-top: 2rem;
+}
