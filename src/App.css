@@ -17,6 +17,35 @@
   color: white; 
   /* align-items: center; */
 }
+.App-header2 {
+  background-image: url("./img/bg-img.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white; 
+  justify-content: center;
+  align-items:flex-end;
+}
+@media (max-width: 950px){
+  .App-header2 {
+    background-color: #666565;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
+    color: white; 
+    justify-content: center;
+    align-items:center;
+  }
+
+}
+
 
 .App-header h2{
   font-size: 30px;
@@ -29,6 +58,27 @@
   margin-left: 10%;
   margin-bottom: 3rem;
 }
+
+
+
+@media (max-width: 950px){
+  .ContainerRestaurants{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(1, 90%);
+  }
+  .ListCont{
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .InfoCont{
+    display: flex;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+}
+
+
 .InfoCont{
   background-color: #A5A5A5;
 }
@@ -36,6 +86,7 @@
   margin-top: 5rem;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .ListCont a{
   text-decoration: none;
@@ -67,4 +118,76 @@
 
 .title{
   margin-top: 2rem;
+}
+.listTitle{
+  font-size: 30px;
+  margin-bottom: 2rem;
+}
+
+.Contenedor2{
+  justify-content: center;
+}
+
+.Info{
+  /* display: flex; */
+  /* align-content: flex-end; */
+  margin-right: 5%;
+}
+.contSmall{
+  /* display: flex; */
+  flex-direction: column;
+}
+.signUp{
+  background-color: #1c398a;
+  margin: 0 15%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 20px;
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+.textSignUp{
+  margin-top: 10px;
+}
+
+.signUp:hover{
+  background-color: #2346a7;
+  color: rgb(173, 173, 173);
+}
+
+.contForm{
+  margin-right: 15%
+}
+.input{
+  width: 120%;
+  color: #666565;
+  font-size: 20px;
+  margin-right: 40px;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.contFormulary{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+}
+.contFormulary p{
+  display: flex;
+  text-align: left;
+  margin-bottom: 8px;
+  margin-left: 10px;
+}
+
+@media(max-width: 950px){
+  .Info{
+    align-items: center;
+    justify-items: center;
+  }
 }

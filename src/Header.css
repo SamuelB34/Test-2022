@@ -15,4 +15,23 @@
 .Container a p{
     font-size: 18px;
 }
+.username{
+    display: flex;
+}
 
+@media (max-width: 950px){
+    .Container{
+        background-color: #3C3C3C;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: rgb(223, 223, 223);
+    }
+    .titleApp{
+        text-align: center;
+    }
+    .username{
+        margin-top: 2rem;
+    }
+  }

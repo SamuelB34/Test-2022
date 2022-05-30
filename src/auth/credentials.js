@@ -1,3 +1,4 @@
+import { dblClick } from "@testing-library/user-event/dist/click";
 import { initializeApp } from "firebase/app";
 
 
@@ -12,4 +13,33 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
+
+const SaveUser = (user) =>{
+    db.collection("users").add({
+        user
+    })
+    .then(function(docRef){
+        MJSOK()
+    })
+    .catch(function(error){
+        MJSERROR()
+    })
+}
+
+const MJSOK =()=>{
+    Swal.fire(
+        'Bien',
+        'Guardado',
+        'Exito'
+    )
+}
+
+const MJSERROR =()=>{
+    Swal.fire(
+        'oops',
+        'no se guardo',
+        'error'
+    )
+}
+
 export default firebaseApp;

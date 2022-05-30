@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import Example from './Carousel';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Header } from './componentes/layout/Header';
+import LoggedOut from './LoggedOut';
+import Info from './Info';
 
 import Restaurant1 from './componentes/restaurant1';
 import Restaurant2 from './componentes/restaurant2';
@@ -28,25 +31,6 @@ function App() {
   const [name9, setName9] = useState('');
   const [name10, setName10] = useState('');
 
-  const [type1, setType1] = useState('');
-  const [type2, setType2] = useState('');
-  const [type3, setType3] = useState('');
-  const [type4, setType4] = useState('');
-  const [type5, setType5] = useState('');
-  const [type6, setType6] = useState('');
-  const [type7, setType7] = useState('');
-  const [type8, setType8] = useState('');
-  const [type9, setType9] = useState('');
-  const [type10, setType10] = useState('');
-
-  const [location1, setLocation1] = useState();
-  const [location2, setLocation2] = useState();
-  const [location3, setLocation3] = useState();
-  const [location4, setLocation4] = useState();  
-  const [location5, setLocation5] = useState();
-  const [location6, setLocation6] = useState();
-  const [location7, setLocation7] = useState();
-
 
 
   
@@ -69,38 +53,33 @@ function App() {
                 setName8(data["restaurant8"].name)
                 setName9(data["restaurant9"].name)
                 setName10(data["restaurant10"].name)
-
-                setType1(data["restaurant1"].type)
-                setType2(data["restaurant2"].type)
-                setType3(data["restaurant3"].type)
-                setType4(data["restaurant4"].type)
-                setType5(data["restaurant5"].type)
-                setType6(data["restaurant6"].type)
-                setType7(data["restaurant7"].type)
-                setType8(data["restaurant8"].type)
-                setType9(data["restaurant9"].type)
-                setType10(data["restaurant10"].type)
-
-                setLocation1(data["restaurant1"].location)
-                setLocation2(data["restaurant2"].location)
-                setLocation3(data["restaurant3"].location)
-                setLocation4(data["restaurant4"].location)
-                setLocation5(data["restaurant5"].location)
-                setLocation6(data["restaurant6"].location)
-                setLocation7(data["restaurant7"].location)
             });
     };
 
-    getData1();
+    getData1(); 
 
+
+    const [loggedIn, setLoggedIn ] = useState(true)
+
+    const postive=()=>{
+      loggedIn(false)
+    }
+    
   return (
     <BrowserRouter>
       <div className="App">
+        <Header 
+          setLoggedIn={setLoggedIn}
+          loggedIn = {loggedIn}
+        />
         <header className="App-header">
 
-          <div className='ContCarousell'>
-            <div className='Contenedor2'>
-              <Example />
+        {loggedIn?
+          <div>
+            <div className='ContCarousell'>
+          <div className='Contenedor2'>
+              <Example 
+              />
             </div>
           </div>
 
@@ -109,22 +88,21 @@ function App() {
 
           <div className='ContainerRestaurants'>
             <div className='ListCont'>
-              <h4>Lista</h4>
-              <a href='/restaurant1'><p> Restaurant {name1}</p></a>
-              <a href='/restaurant2'><p> Restaurant {name2}</p></a>
-              <a href='/restaurant3'><p> Restaurant {name3}</p></a>
-              <a href='/restaurant4'><p> Restaurant {name4}</p></a>
-              <a href='/restaurant5'><p> Restaurant {name5}</p></a>
-              <a href='/restaurant6'><p> Restaurant {name6}</p></a>
-              <a href='/restaurant7'><p> Restaurant {name7}</p></a>
-              <a href='/restaurant8'><p> Restaurant {name8}</p></a>
-              <a href='/restaurant9'><p> Restaurant {name9}</p></a>
-              <a href='/restaurant10'><p> Restaurant {name10}</p></a>
-
+              <h4 className='listTitle'>List</h4>
+              <a href='/restaurant1' onClick={postive}><p> Restaurant {name1}</p></a>
+              <a href='/restaurant2' onClick={postive}><p> Restaurant {name2}</p></a>
+              <a href='/restaurant3' onClick={postive}><p> Restaurant {name3}</p></a>
+              <a href='/restaurant4' onClick={postive}><p> Restaurant {name4}</p></a>
+              <a href='/restaurant5' onClick={postive}><p> Restaurant {name5}</p></a>
+              <a href='/restaurant6' onClick={postive}><p> Restaurant {name6}</p></a>
+              <a href='/restaurant7' onClick={postive}><p> Restaurant {name7}</p></a>
+              <a href='/restaurant8' onClick={postive}><p> Restaurant {name8}</p></a>
+              <a href='/restaurant9' onClick={postive}><p> Restaurant {name9}</p></a>
+              <a href='/restaurant10' onClick={postive}><p> Restaurant {name10}</p></a>
             </div>
               
             <div className='InfoCont'>
-              <main>
+              <main id='info'>
                 <Switch>
                   <Route exact path='/restaurant1' component={Restaurant1}/>
                   <Route exact path='/restaurant2' component={Restaurant2}/>
@@ -136,11 +114,20 @@ function App() {
                   <Route exact path='/restaurant8' component={Restaurant8}/>
                   <Route exact path='/restaurant9' component={Restaurant9}/>
                   <Route exact path='/restaurant10' component={Restaurant10}/>
-
                 </Switch>
               </main>
             </div>
           </div>
+
+          </div>
+
+        : 
+        <div>        
+          <LoggedOut />
+        </div>
+
+        }
+          
 
         </header>
       </div>
